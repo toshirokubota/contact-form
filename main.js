@@ -1,16 +1,9 @@
 
 const form = document.getElementById('form');
 const modal = document.querySelector('.modal');
-// const fname = document.getElementById('first-name');
-// const lname = document.getElementById('last-name');
-// const email = document.getElementById('email');
-// const message = document.getElementById('message');
-// const qtype1 = document.getElementById('query-type1');
-// const qtype2 = document.getElementById('query-type2');
-// const consent = document.getElementById('consent');
-// const inputs = [fname, lname, email, message, qtype1, consent];
 const input_names = ['first-name', 'last-name', 'email', 'query-type', 'message', 'consent'];
 
+//associate each input name to its container for error handling
 const containers = new Map();
 for(let name of input_names) {
     let query = 'input[name='+name+'], textarea[name='+name+']';
@@ -26,8 +19,9 @@ for(let name of input_names) {
         console.log('failed to find a container for ', name);
     }
 }
-console.log(containers);
+//console.log(containers);
 
+//error checkers
 const notEmpty = (value) => {
     return value && value.trim().length > 0;
 }
@@ -35,6 +29,8 @@ const isEmail = (value) => {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return emailRegex.test(value);
 }
+
+//associate each input name with error handlers
 const validator = {
     'first-name': [notEmpty],
     'last-name' : [notEmpty],
@@ -43,6 +39,8 @@ const validator = {
     'query-type': [notEmpty],
     'consent': [notEmpty]
 };
+
+//associate each error handler with an error text class
 const errorIndicators = new Map();
 errorIndicators[notEmpty] = '.error-empty';
 errorIndicators[isEmail] = '.error-format';
@@ -79,11 +77,11 @@ function handleSubmit(e) {
             }
         }
     };
-    console.log('invalids', invalid_elms);
+    //console.log('invalids', invalid_elms);
     e.preventDefault(); // prevent the default behaviour
     if(invalid_elms.length === 0) {
         form.reset();
-        modal.classList.toggle('valid');
+        modal.classList.toggle('valid'); //show the confirmation modal
     }
 }
 form.addEventListener('submit', handleSubmit);
@@ -92,6 +90,11 @@ form.addEventListener('submit', handleSubmit);
 console.log('modal', modal);
 modal.addEventListener('click', ()=>{
     modal.classList.toggle('valid');
+});
+document.addEventListener('keydown', ()=>{
+    if(modal.classList.contains('valid')) {
+        modal.classList.toggle('valid');
+    }
 });
 
 //focus of radio inputs

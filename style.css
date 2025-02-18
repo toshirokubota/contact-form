@@ -44,11 +44,6 @@ form {
     align-items: stretch;
     gap: 1rem;
 }
-/* label {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-} */
 .input-group {
     display: flex;
     flex-direction: column;
@@ -155,10 +150,6 @@ input:hover, input:focus, textarea:hover, textarea:focus {
 }
 input[type='checkbox']:focus ~ span {
     color: var(--green-600);
-}
-.consent-group label {
-    padding: 0;
-    border: none;
 }
 .error-msg{
     display: none;
