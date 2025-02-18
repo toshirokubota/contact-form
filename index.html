@@ -24,55 +24,56 @@
     <h1>Contact Us</h1>
     <form id="form">
       <div class="input-group fname-group">
-        <label for="first-name">First Name *</label>
-        <input type='text' id="first-name" name="first-name">
+        <span class="input-header">First Name *</span>
+        <label for="first-name">
+          <input type='text' id="first-name" name="first-name">
+        </label>
         <p class="error-msg error-empty">This field is required</p>
       </div>
       <div class="input-group lname-group">
-        <label for="last-name">Last Name *</label>
-        <input type='text' id="last-name" name="last-name">
+        <span class="input-header">Last Name *</span>
+        <label for="last-name">
+          <input type='text' id="last-name" name="last-name">
+        </label>
         <p class="error-msg error-empty">This field is required</p>
       </div>
       <div class="input-group email-group">
-        <label for="email">Email Address *</label>
-        <input type='email' id="email" name="email">
+        <span class="input-header">Email Address *</span>
+        <label for="email">
+          <input type='email' id="email" name="email">
+        </label>
         <p class="error-msg error-format">Please enter a valid email address</p>
         <p class="error-msg error-empty">This field is required</p>
       </div>
       <div class="input-group query-group">
-        <label>Query type *</label>
+        <span class="input-header">Query type *</span>
         <div class="input-semi-group">
           <label for="query-type1" class="radio-wrapper">
             <input type='radio' id="query-type1" name="query-type">
-            <span class="radio-icon">
-              <img src="./assets/images/icon-radio-selected.svg" alt=""/>
-            </span>
+            <span class="radio-icon"></span>
             <span>General Enquiry</span>
           </label>
-        </div>
-        <div class="input-semi-group">
           <label for="query-type2" class="radio-wrapper">
             <input type='radio' id="query-type2" name="query-type">
-            <span class="radio-icon">
-              <img src="./assets/images/icon-radio-selected.svg" alt=""/>
-            </span>
+            <span class="radio-icon"></span>
             <span>Support Request</span>
           </label>
         </div>
         <p class="error-msg error-empty">  Please select a query type</p>
       </div>
       <div class="input-group message-group">
-        <label for="message">Message *</label>
-        <textarea id="message" name="message" rows="10"></textarea>
+        <span class="input-header">Message *</span>
+        <label for="message">
+          <textarea id="message" name="message" rows="10"></textarea>
+        </label>
         <p class="error-msg error-empty">This field is required</p>
       </div>
       <div class="input-group consent-group">
-        <div class="input-semi-group">
-          <label for="consent">
-            <input type="checkbox" id="consent" name="consent">
-            <span>I consent to being contacted by the team *</span>
-          </label>
-        </div>
+        <label for="consent" class="checkbox-wrapper">
+          <input type="checkbox" id="consent" name="consent">
+          <span class="checkbox-icon"></span>
+          <span>I consent to being contacted by the team *</span>
+        </label>
         <p class="error-msg error-empty">To submit this form, please consent to being contacted</p>
       </div>
       <div class="input-group submit-group">
