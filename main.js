@@ -88,7 +88,21 @@ function handleSubmit(e) {
 }
 form.addEventListener('submit', handleSubmit);
 
+//modal is closed by clicking it
 console.log('modal', modal);
 modal.addEventListener('click', ()=>{
     modal.classList.toggle('valid');
 });
+
+//focus of radio inputs
+document.querySelectorAll("input[name='query-type']").forEach(input => {
+    input.addEventListener('focus', function() {
+        this.parentNode.style.backgroundColor = 'hsl(148, 38%, 91%)'; // Change background color on focus
+    });
+
+    input.addEventListener('blur', function() {
+        this.parentNode.style.backgroundColor = ''; // Reset background color on blur
+    });
+});
+
+

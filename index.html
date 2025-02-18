@@ -24,21 +24,21 @@
     <h1>Contact Us</h1>
     <form id="form">
       <div class="input-group fname-group">
-        <span class="input-header">First Name *</span>
+        <span class="input-header required-item">First Name</span>
         <label for="first-name">
           <input type='text' id="first-name" name="first-name">
         </label>
         <p class="error-msg error-empty">This field is required</p>
       </div>
       <div class="input-group lname-group">
-        <span class="input-header">Last Name *</span>
+        <span class="input-header required-item">Last Name</span>
         <label for="last-name">
           <input type='text' id="last-name" name="last-name">
         </label>
         <p class="error-msg error-empty">This field is required</p>
       </div>
       <div class="input-group email-group">
-        <span class="input-header">Email Address *</span>
+        <span class="input-header required-item">Email Address</span>
         <label for="email">
           <input type='email' id="email" name="email">
         </label>
@@ -46,7 +46,7 @@
         <p class="error-msg error-empty">This field is required</p>
       </div>
       <div class="input-group query-group">
-        <span class="input-header">Query type *</span>
+        <span class="input-header required-item">Query type</span>
         <div class="input-semi-group">
           <label for="query-type1" class="radio-wrapper">
             <input type='radio' id="query-type1" name="query-type">
@@ -62,7 +62,7 @@
         <p class="error-msg error-empty">  Please select a query type</p>
       </div>
       <div class="input-group message-group">
-        <span class="input-header">Message *</span>
+        <span class="input-header required-item">Message</span>
         <label for="message">
           <textarea id="message" name="message" rows="10"></textarea>
         </label>
@@ -72,7 +72,7 @@
         <label for="consent" class="checkbox-wrapper">
           <input type="checkbox" id="consent" name="consent">
           <span class="checkbox-icon"></span>
-          <span>I consent to being contacted by the team *</span>
+          <span class="required-item">I consent to being contacted by the team</span>
         </label>
         <p class="error-msg error-empty">To submit this form, please consent to being contacted</p>
       </div>
@@ -81,10 +81,11 @@
       </div>
     </form>
     <div class="modal">
-        <div class="confirmation-msg">
-          Message Sent!
-          Thanks for completing the form. We'll be in touch soon!
-        </div>  
+      <div class="modal-header">
+        <img src="./assets/images/icon-success-check.svg" alt="success icon"/>
+        <span>Message Sent!</span>
+      </div>
+      <p>Thanks for completing the form. We'll be in touch soon!</p>
     </div>
     <footer>
       <div class="attribution">
